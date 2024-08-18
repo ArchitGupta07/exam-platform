@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,7 +21,28 @@
   }
 }
 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+html{
+  font-size: 10px;
+}
+s
 body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.container{
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -30,4 +56,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
