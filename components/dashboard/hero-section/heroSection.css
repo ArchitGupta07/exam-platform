@@ -1,0 +1,25 @@
+.hero-section .container{
+    display: flex;
+}
+.hero-section .info-side{
+    flex: 1;
+    border: 1px solid red;
+    /* text-align: center; */
+    padding: 2rem 2rem;
+
+    .headline{
+        font-size: 6.8rem;
+        font-weight: 600;
+    }
+}
+
+/* .hero-section .info-side .headline{
+
+} */
+.hero-section .image-side{
+    flex: 1;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+
+}
