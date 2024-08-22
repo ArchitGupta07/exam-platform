@@ -26,7 +26,7 @@ const Navbar = () => {
             </ul>
         </nav>
         <div className="signin-part">
-            <Link className='link' href="./signin">SignIn</Link>
+            <Link className='signin-link link' href="./signin">SignIn</Link>
             <Link className='signup-link link' href="./signup">SignUp</Link>
         </div>
       

@@ -1,15 +1,46 @@
 .hero-section .container{
     display: flex;
+    gap: 1rem;
+    margin-top: 2.8rem;
 }
 .hero-section .info-side{
     flex: 1;
-    border: 1px solid red;
+    color: #fff;
+    /* border: 1px solid red; */
     /* text-align: center; */
     padding: 2rem 2rem;
+    
+    background-color:#8c5bd9;
+    /* background-color: var(--primary-color); */
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+    border-radius: 10px 10px 5px 5px ;
 
     .headline{
         font-size: 6.8rem;
-        font-weight: 600;
+        font-weight: 300;
+        text-align: center;
+    }
+    .explore-info{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+
+    }
+
+    .explore-info button{
+        padding:1rem 2rem;
+        display: flex;
+        font-size: 2rem;
+        font-weight: 300;
+        border-radius: .8rem;
+    }
+    .to-Exam-btn{
+        background-color: #fff;
+        color: black;
+
+    }
+    .to-blog-btn{
+        background-color: black;
     }
 }
 
@@ -18,8 +49,11 @@
 } */
 .hero-section .image-side{
     flex: 1;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
+    /* border: 1px solid black; */
+    /* border-top: 1px solid black;
+border-right: 1px solid black */
 
 }
