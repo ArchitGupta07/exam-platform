@@ -4,6 +4,7 @@ import React from 'react';
 import "@/components/navbar/navbar.css"
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const Navbar = () => {
 
@@ -13,6 +14,7 @@ const Navbar = () => {
 
     <header className='container header'>
         <div className="logo-part">
+            <Image src="/logo.png" width={40} height={40} alt='logo'/>
             <h2>
                 GiveExams
             </h2>
