@@ -1,0 +1,7 @@
+.exams-showcase-section .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border: 1px solid black;
+    padding: 4rem;
+    gap: 2rem;
+}

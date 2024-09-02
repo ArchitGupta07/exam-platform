@@ -8,10 +8,10 @@ const Footer = () => {
     <footer className='footer'>
       <div className="container">
         <div className="social-icons">
-          <span className='social-link'><Link href=""><Image src="/insta.png" alt="insta logo" width={20} height={20}/></Link></span>
-          <span className='social-link'><Link href=""><Image src="/yt.png" alt="youtube logo" width={20} height={20}/></Link></span>
-          <span className='social-link'><Link href=""><Image src="/twitter.png" alt="twitter logo" width={20} height={20}/></Link></span>
-          <span className='social-link'><Link href=""><Image src="/fb.png" alt="facebook logo" width={20} height={20}/></Link></span>
+          <span className='social-link'><Link href=""><Image src="/insta.png" alt="insta logo" width={25} height={25}/></Link></span>
+          <span className='social-link'><Link href=""><Image src="/yt.png" alt="youtube logo" width={25} height={25}/></Link></span>
+          <span className='social-link'><Link href=""><Image src="/twitter.png" alt="twitter logo" width={25} height={25}/></Link></span>
+          <span className='social-link'><Link href=""><Image src="/fb.png" alt="facebook logo" width={25} height={25}/></Link></span>
 
         </div>
         <div className="footer-nav-links">
