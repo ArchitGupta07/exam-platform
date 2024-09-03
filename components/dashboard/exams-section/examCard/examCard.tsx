@@ -25,11 +25,25 @@ const ExamCard: React.FC<ExamCardProps> = ({exam}) => {
   return (
     <div className='exam-card'>
 
-        <Image src="/exam-icon.png" alt='exam icon' width={40} height={40}/>
+      <div className="icon-part">
+
+
+        <Image src="/exam-icon.png" alt='exam icon' width={60} height={60}/>
+
+        <div className="duration">
+          <Image src='/clock.png' alt='clock img' width={40} height={40}/>
+          <span className='exam-duration'>{exam.duration}</span>
+        </div>
+      </div>
+
+
+        <div className="exam-details">
+          
 
         <h1 className='exam-title'>{exam.title}</h1>
-        <p className='exam-details'>{exam.description}</p>
-        <p className='exam-details'>Duration:- {exam.duration}</p>
+        <p className='exam-desc'>{exam.description}</p>
+        </div>
+        {/* <p className='exam-det'>Duration:- {exam.duration}</p> */}
         <button className='take-exam-btn'>Take Exam</button>
 
       

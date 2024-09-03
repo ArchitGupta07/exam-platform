@@ -51,7 +51,7 @@
 .header nav ul li{
     /* flex: 1; */
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +65,7 @@
 .header nav ul li:hover,
 .header nav ul .active{
     color: rgb(0, 0, 0);
-    font-weight: 500;
+    /* font-weight: 500; */
     /* border-bottom: 2px solid var(--primary-color); */
     background: var(--primary-color);
     border-radius: 5px;

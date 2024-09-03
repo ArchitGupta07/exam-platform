@@ -14,7 +14,7 @@ export const testData: Test[] = [
         id: 1,
         title: "General Knowledge Quiz",
         description: "Test your knowledge across a variety of general topics. Perfect for trivia enthusiasts!",
-        duration: "30 minutes",
+        duration: "30 mins",
         totalQuestions: 50,
         category: "General Knowledge",
         difficulty: "Medium",
