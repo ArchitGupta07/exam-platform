@@ -18,7 +18,7 @@ const ExamsSection = () => {
       
 
 
-        {testData.map((test:Test)=><ExamCard exam = {test}/>)}
+        {testData.map((test:Test, indx)=><ExamCard key={indx} exam = {test}/>)}
         {/* <ExamCard/>
         <ExamCard/>
         <ExamCard/> */}
