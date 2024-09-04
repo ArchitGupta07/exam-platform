@@ -1,48 +1,50 @@
-.exam-card{
+.exam-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid red; */
+  padding: 3rem;
+  gap: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  /* gap: 4rem; */
+}
+
+.exam-card .icon-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .duration {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* border: 1px solid red; */
-    padding: 3rem;
-    gap: 1rem;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    /* gap: 4rem; */
-}
-
-.exam-card .icon-part{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 
-    .duration{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .exam-duration{
-            font-size: 1.4rem;
-        }
+    .exam-duration {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-soft);
     }
+  }
 }
-.exam-card .exam-details{
-    flex: 1;
+.exam-card .exam-details {
+  flex: 1;
 }
 
-.exam-card .exam-title{
-    font-size: 2.8rem;
-    font-weight: 500;
+.exam-card .exam-title {
+  font-size: 2.8rem;
+  font-weight: 500;
 }
-.exam-card .exam-desc{
-    font-size: 1.6rem;
+.exam-card .exam-desc {
+  font-size: 1.6rem;
+  color: var(--text-soft);
 }
-.exam-card .take-exam-btn{
-    background-color: #000;
-    color: white;
-    padding: 1.6rem;
-    font-size: 1.8rem;
-    border-radius: 5px;
-    justify-self: flex-end;
-    
+.exam-card .take-exam-btn {
+  background-color: #000;
+  color: white;
+  padding: 1.6rem;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  justify-self: flex-end;
 }

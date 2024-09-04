@@ -65,19 +65,19 @@ const ExamWindow = () => {
             <div className="section-wise-options">
               <button
                 className={`section-option ${currentSection === "Physics" ? "active" : ""}`}
-                // onClick={() => handleButtonClick("Physics")}
+                onClick={() => setCurrentSection("Physics")}
               >
                 Physics
               </button>
               <button
                 className={`section-option ${currentSection === "Chemistry" ? "active" : ""}`}
-                // onClick={() => handleButtonClick("Chemistry")}
+                onClick={() => setCurrentSection("Chemistry")}
               >
                 Chemistry
               </button>
               <button
                 className={`section-option ${currentSection === "Maths" ? "active" : ""}`}
-                // onClick={() => handleButtonClick("Maths")}
+                onClick={() => setCurrentSection("Maths")}
               >
                 Maths
               </button>

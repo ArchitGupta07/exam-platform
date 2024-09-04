@@ -1,25 +1,22 @@
-.exams-showcase-section .container{
+.exams-showcase-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 0;
+  /* border: 1px solid black; */
+  background-color: var(--bgSoft);
 
-    /* border: 1px solid black; */
-    background-color: #dfdede;
+  .headline {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+  }
 
-    .headline{
-        text-align: center;
-        font-size: 4rem;
-        font-weight: 600;
-
-    }
-   
-
-    .cards-container{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        padding: 2rem 4rem;
-        gap: 2rem;
-    }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 4rem;
+    gap: 2rem;
+  }
 }
