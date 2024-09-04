@@ -1,104 +1,194 @@
- .exam-window .container{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem 3rem;
-    /* height: 100vh; */
-    /* border: 1px solid pink; */
-    background-color: #f0f0f0;
+.exam-window {
+  flex: 1;
+  display: grid;
+}
 
-    .ques-index{
+.exam-window .container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 2.8fr;
+  /* justify-content: center; */
+  /* align-items: stretch; */
+  gap: 2rem;
+  padding: 0rem 3rem;
+  /* height: 100vh; */
+  /* border: 1px solid pink; */
+  background-color: #f0f0f0;
+  height: 75vh;
+
+  .left {
+    /* flex: 1; */
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 2rem;
+    overflow-y: auto;
+
+    .exam-timer {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 5px;
+      display: flexa;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ques-tracker {
+      overflow-y: auto;
+      background-color: #fff;
+      border-radius: 5px;
+
+      .section-wise-options {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* overflow-y: hidden; */
+        padding: 2rem 0;
+        gap: 1rem;
+        margin: 0 1rem;
+        border-bottom: 1px solid black;
+
+        button {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: 1.6rem;
+          padding: 0.5rem 1.4rem;
+          display: flex;
+          justify-content: center;
+
+          font-weight: 600;
+          border-radius: 20px;
+          cursor: pointer;
+          /* border: 1px solid black; */
+          /* background-color: var(--primary-color); */
+          box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.2);
+          color: rgb(0, 0, 0);
+          transition: all 0.2s;
+        }
+
+        button:hover,
+        button.active {
+          background-color: #c1f6fa;
+        }
+      }
+      .ques-index {
         /* border: 1px solid red; */
-        flex: 1;
+
         background-color: #fff;
-        border-radius: 5px;
+        /* border-radius: 5px; */
 
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: .6rem;
+        gap: 0.6rem;
         padding: 4rem;
+        /* overflow-y: scroll; */
 
-        .ques-button{
-            /* border: 1px solid black; */
-            font-size: 1.4rem;
-            padding: .8rem 0;
-            border-radius: 5px;
-            font-weight: 500;
-            background-color: var(--primary-color);
+        .curr-ques-btn {
+          box-shadow: inset 0 0 0 2px black;
         }
 
-        .ques-button:hover{
-            background-color: #f8ed73;
+        .ques-button {
+          /* border: 1px solid black; */
+          font-size: 1.4rem;
+          padding: 0.8rem 0;
+          border-radius: 5px;
+          font-weight: 500;
+          /* background-color: var(--primary-color); */
+          background-color: #0dab76;
         }
 
+        .ques-button:hover {
+          background-color: #f8ed73;
+        }
+      }
     }
-
-    .ques-display{
-        /* border: 2px solid black; */
-        flex: 3;
-        padding: 6rem 3rem;
-        height: 100%;
-        background-color: #fff;
-        border-radius: 5px;
-
-        .question-num{
-            font-size: 2rem;
-            font-weight: 500;
-        }
-        .question {
-            font-size: 2rem;
-
-
-        }
-
-        
-
-        form ul li .square-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        form ul li .square-checkbox input{
-            /* border: 1px solid red; */
-            transform: scale(1.2);
-            /* width: 20px; */
-        }
-
-        form ul li .option{
-            font-size: 2rem ;
-        }
-
-
-        .track-btns{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2.6rem;
-
-
-            .prev-ques-btn, .next-ques-btn{
-                font-size: 1.6rem;
-                padding: .5rem 1rem;
-                display: flex;
-                justify-content: center;
-                
-                font-weight: 600;
-                border-radius: 5px;
-                cursor: pointer;
-                /* border: 1px solid black; */
-                background-color: var(--primary-color);
-                color: rgb(0, 0, 0);
-                transition: all 0.2s;
-
-            }
-        }
-        
-    }
-
-
   }
 
-  /*
+  .right {
+    /* flex: 3; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    height: 100%;
+
+    overflow-y: auto;
+    .ques-display {
+      /* border: 2px solid black; */
+      /* flex: 1; */
+      padding: 6rem 3rem;
+      height: 100%;
+      background-color: #fff;
+      border-radius: 5px;
+      overflow-y: auto;
+
+      .question-num {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+      .question {
+        font-size: 2rem;
+      }
+
+      form {
+        padding-left: 0.8rem;
+      }
+
+      form ul li .square-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      form ul li .square-checkbox input {
+        /* border: 1px solid red; */
+        transform: scale(1.2);
+        /* width: 20px; */
+      }
+
+      form ul li .option {
+        font-size: 2rem;
+      }
+    }
+    .track-btns {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2.6rem;
+      background-color: #fff;
+      padding: 2rem 2rem;
+      border-radius: 5px;
+      gap: 1rem;
+
+      .prev-ques-btn,
+      .next-ques-btn,
+      .mark-ques-btn {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.6rem;
+        padding: 0.5rem 1.4rem;
+        display: flex;
+        justify-content: center;
+
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        /* border: 1px solid black; */
+        background-color: var(--primary-color);
+        color: rgb(0, 0, 0);
+        transition: all 0.2s;
+      }
+
+      .prev-ques-btn {
+        /* align-self: flex-start; */
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+/*
   .container {
     display: flex;
     background-color: #ffffff;

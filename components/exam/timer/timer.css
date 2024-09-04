@@ -1,0 +1,16 @@
+.timer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  .headline {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .clock {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}

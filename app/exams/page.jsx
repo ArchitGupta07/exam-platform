@@ -3,9 +3,9 @@ import ExamWindow from "@/components/exam/examWindow/examWindow";
 
 const Exam = () => {
   return (
-    <div>
+    <section className="exam-window-section">
       <ExamWindow />
-    </div>
+    </section>
   );
 };
 
