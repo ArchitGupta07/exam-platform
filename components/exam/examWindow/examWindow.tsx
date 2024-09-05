@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-import "./examWindow.css";
+import "./examWindow.scss";
 import { questions } from "@/data/quesData";
 import Image from "next/image";
 import Timer from "@/components/exam/timer/timer.jsx";
