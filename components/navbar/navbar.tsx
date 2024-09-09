@@ -19,46 +19,56 @@ const Navbar = () => {
         <ul>
           <li
             className={
-              path === "/" ? "active main-header-list" : "main-header-list"
+              path === "/dashboard"
+                ? "active main-header-list"
+                : "main-header-list"
             }
           >
-            <Link href="/">Home</Link>
+            <Link href="/dashboard">Home</Link>
           </li>
           <li
             className={
-              path === "/about" ? "active main-header-list" : "main-header-list"
+              path === "/dashboard/about"
+                ? "active main-header-list"
+                : "main-header-list"
             }
           >
-            <Link href="/about">About</Link>
+            <Link href="/dashboard/about">About</Link>
           </li>
           <li
             className={
-              path === "/exams" ? "active main-header-list" : "main-header-list"
+              path === "/dashboard/exams"
+                ? "active main-header-list"
+                : "main-header-list"
             }
           >
-            <Link href="/exams">Exams</Link>
+            <Link href="/dashboard/exams">Exams</Link>
           </li>
           <li
             className={
-              path === "/blog" ? "active main-header-list" : "main-header-list"
+              path === "/dashboard/blog"
+                ? "active main-header-list"
+                : "main-header-list"
             }
           >
-            <Link href="/blog">Blog</Link>
+            <Link href="/dashboard/blog">Blog</Link>
           </li>
           <li
             className={
-              path === "/code" ? "active main-header-list" : "main-header-list"
+              path === "/dashboard/code"
+                ? "active main-header-list"
+                : "main-header-list"
             }
           >
-            <Link href="/code">Code Snippets</Link>
+            <Link href="/dashboard/code">Code Snippets</Link>
           </li>
         </ul>
       </nav>
       <div className="signin-part">
-        <Link className="signin-link link" href="./signin">
+        <Link className="signin-link link" href="../signin">
           SignIn
         </Link>
-        <Link className="signup-link link" href="./signup">
+        <Link className="signup-link link" href="../signup">
           SignUp
         </Link>
       </div>
