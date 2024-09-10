@@ -16,6 +16,10 @@
   gap: 1rem;
 }
 
+.footer .social-icons .social-link svg:hover {
+  fill: var(--text-soft);
+}
+
 .footer-nav-links {
   /* border: 1px solid red; */
   flex: 3;

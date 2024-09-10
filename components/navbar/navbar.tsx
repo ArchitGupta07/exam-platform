@@ -67,10 +67,10 @@ const Navbar = () => {
       </nav>
       <div className="signin-part">
         <Link className="signin-link link" href="/signin">
-          SignIn
+          Sign In
         </Link>
         <Link className="signup-link link" href="../signup">
-          SignUp
+          Sign Up
         </Link>
       </div>
     </header>

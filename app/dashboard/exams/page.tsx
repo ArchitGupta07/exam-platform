@@ -2,6 +2,8 @@ import React from "react";
 import "@/components/exams/exams.scss";
 import ExamCard from "@/components/dashboard/exams-section/examCard/examCard";
 import { Test, testData } from "@/data/examData";
+import Modal from "@/components/modal/modal";
+import Link from "next/link";
 
 const Exams = () => {
   return (
