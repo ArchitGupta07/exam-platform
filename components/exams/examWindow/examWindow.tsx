@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./examWindow.scss";
 import { questions } from "@/data/quesData";
 import Image from "next/image";
-import Timer from "@/components/exam/timer/timer.jsx";
+import Timer from "@/components/exams/timer/timer.jsx";
 
 interface Answers {
   [key: number]: string;
@@ -60,7 +60,6 @@ const ExamWindow = () => {
           <div className="exam-timer">
             <Timer initialSeconds={36000} />
           </div>
-
           <div className="ques-tracker">
             <div className="section-wise-options">
               <button
@@ -90,10 +89,10 @@ const ExamWindow = () => {
                     backgroundColor: markedQues.includes(question.id)
                       ? "#3E2F5B"
                       : answers[question.id] && answers[question.id] !== "None"
-                        ? "#0DAB76" // Highlight color
+                        ? "#0DAB76"
                         : Object.keys(answers).includes(String(question.id))
                           ? "#C75146"
-                          : "#f5dc00",
+                          : "#fff",
                   }}
                   className={
                     currentQuestionIndex === indx
@@ -121,6 +120,24 @@ const ExamWindow = () => {
                 </button>
               ))}
             </div>
+          </div>
+          <div className="tracker-instructions">
+            <span className="instruction-span">
+              <button style={{ backgroundColor: "#3E2F5B" }}></button>
+              <h1>Marked for Review</h1>
+            </span>
+            <span className="instruction-span">
+              <button style={{ backgroundColor: "#0DAB76" }}></button>
+              <h1>Answered</h1>
+            </span>
+            <span className="instruction-span">
+              <button style={{ backgroundColor: "#C75146" }}></button>
+              <h1>Not Answered</h1>
+            </span>
+            <span className="instruction-span">
+              <button style={{ boxShadow: "inset 0 0 0 1px  #000" }}></button>
+              <h1>Not Attempted</h1>
+            </span>
           </div>
         </div>
 

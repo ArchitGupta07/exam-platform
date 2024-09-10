@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import "./examCard.css";
 import { Test } from "@/data/examData";
+import Link from "next/link";
 
 interface ExamCardProps {
   exam: Test;
@@ -21,13 +22,16 @@ const ExamCard: React.FC<ExamCardProps> = ({ exam }) => {
 
   return (
     <div className="exam-card">
-      <div className="icon-part">
-        <Image src="/exam-icon.png" alt="exam icon" width={60} height={60} />
+      {/* <div className="icon-part">
+        <Image src="/exam-icon.png" alt="exam icon" width={50} height={50} />
 
         <div className="duration">
-          <Image src="/clock.png" alt="clock img" width={40} height={40} />
+          <Image src="/clock.png" alt="clock img" width={30} height={30} />
           <span className="exam-duration">{exam.duration}</span>
         </div>
+      </div> */}
+      <div className="exam-card-img">
+        <img src="/exam-card-img1.jpg" alt="" />
       </div>
 
       <div className="exam-details">
@@ -35,7 +39,9 @@ const ExamCard: React.FC<ExamCardProps> = ({ exam }) => {
         <p className="exam-desc">{exam.description}</p>
       </div>
       {/* <p className='exam-det'>Duration:- {exam.duration}</p> */}
-      <button className="take-exam-btn">Take Exam</button>
+      <Link href="/dashboard/exams/exam_id" className="take-exam-btn">
+        Take Exam
+      </Link>
     </div>
   );
 };

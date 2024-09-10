@@ -1,0 +1,33 @@
+.all-exams-section {
+  .container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bgSoft);
+
+    padding: 4rem;
+    gap: 4rem;
+
+    .available-exams,
+    .personal-exams {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .headline {
+        font-size: 2rem;
+        font-weight: 600;
+        border-bottom: 2px solid #000;
+        align-self: flex-start;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 2rem;
+      }
+    }
+  }
+}

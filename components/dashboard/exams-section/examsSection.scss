@@ -10,7 +10,11 @@
   .headline {
     text-align: center;
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 200;
+    color: var(--text-soft);
+    border-bottom: 1px solid #000;
+
+    align-self: center;
   }
 
   .cards-container {

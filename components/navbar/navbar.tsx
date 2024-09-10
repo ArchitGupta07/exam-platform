@@ -26,15 +26,7 @@ const Navbar = () => {
           >
             <Link href="/dashboard">Home</Link>
           </li>
-          <li
-            className={
-              path === "/dashboard/about"
-                ? "active main-header-list"
-                : "main-header-list"
-            }
-          >
-            <Link href="/dashboard/about">About</Link>
-          </li>
+
           <li
             className={
               path === "/dashboard/exams"
@@ -51,7 +43,7 @@ const Navbar = () => {
                 : "main-header-list"
             }
           >
-            <Link href="/dashboard/blog">Blog</Link>
+            <Link href="/dashboard/blogs">Blogs</Link>
           </li>
           <li
             className={
@@ -62,10 +54,19 @@ const Navbar = () => {
           >
             <Link href="/dashboard/code">Code Snippets</Link>
           </li>
+          <li
+            className={
+              path === "/dashboard/about"
+                ? "active main-header-list"
+                : "main-header-list"
+            }
+          >
+            <Link href="/dashboard/about">About</Link>
+          </li>
         </ul>
       </nav>
       <div className="signin-part">
-        <Link className="signin-link link" href="../signin">
+        <Link className="signin-link link" href="/signin">
           SignIn
         </Link>
         <Link className="signup-link link" href="../signup">

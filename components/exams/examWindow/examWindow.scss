@@ -20,7 +20,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr;
-    gap: 2rem;
+    gap: 1rem;
     overflow-y: auto;
 
     .exam-timer {
@@ -70,7 +70,8 @@
 
         button:hover,
         button.active {
-          background-color: #c1f6fa;
+          background-color: #1693f4;
+          color: #fff;
         }
       }
       .ques-index {
@@ -85,22 +86,51 @@
         padding: 4rem;
         overflow-y: auto;
 
-        .curr-ques-btn {
-          box-shadow: inset 0 0 0 2px black;
-        }
-
         .ques-button {
           /* border: 1px solid black; */
           font-size: 1.4rem;
           padding: 0.8rem 0;
           border-radius: 5px;
           font-weight: 500;
-          background-color: var(--primary-color);
+          // background-color: var(--primary-color);
+          background-color: #fff;
           /* background-color: #0dab76; */
+          // box-shadow: inset 0 0 0 2px black;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .ques-button.curr-ques-btn {
+          box-shadow: inset 0 0 0 2px var(--primary-color);
+          color: var(--primary-color);
         }
 
         .ques-button:hover {
-          box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 0 2px var(--primary-color);
+          border: none;
+          // color: var(--primary-color);
+        }
+      }
+    }
+
+    .tracker-instructions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #fff;
+      border-radius: 5px;
+      gap: 1rem;
+      padding: 2rem 1rem;
+
+      .instruction-span {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        button {
+          padding: 1.2rem;
+          border-radius: 5px;
+        }
+        h1 {
+          font-size: 1.4rem;
         }
       }
     }

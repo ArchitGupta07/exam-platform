@@ -8,7 +8,8 @@
   --background-end-rgb: 255, 255, 255;
   /* --primary-color:#2D82B7 */
   /* --primary-color:#1F01B9 */
-  --primary-color: #f5dc00 /* --primary-color:#157de7 */;
+  --primary-color: #f5dc00;
+  --secondary-color: #0066ff;
   --text-soft: #777575;
   --bgSoft: #f0f0f0;
 }
