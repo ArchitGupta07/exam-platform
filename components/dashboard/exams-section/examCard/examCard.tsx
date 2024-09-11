@@ -24,7 +24,7 @@ const ExamCard: React.FC<ExamCardProps> = ({ exam }) => {
             <li>Read all questions carefully.</li>
             <li>You have {exam.duration} to complete the exam.</li>
             <li>Do not refresh the page during the exam.</li>
-            <li>Click "Submit" once you finish the exam.</li>
+            <li>Click &quot;Submit&quot; once you finish the exam.</li>
           </ol>
           <Link href="/dashboard/exams/exam_id" className="start-button">
             Start Exam
