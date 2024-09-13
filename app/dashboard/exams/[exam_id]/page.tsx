@@ -10,7 +10,6 @@ interface ExamScreenProps {
 const ExamScreen: React.FC<ExamScreenProps> = ({ params }) => {
   const { exam_id } = params;
 
-  console.log(exam_id);
   return (
     <section className="exam-window-section">
       <ExamWindow />

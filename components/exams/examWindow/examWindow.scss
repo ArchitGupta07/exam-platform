@@ -1,6 +1,15 @@
+body .header.container,
+body .footer {
+  display: none;
+}
+
 .exam-window {
   flex: 1;
   display: grid;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  // border: 1px solid red;
 }
 
 .exam-window .container {
@@ -11,16 +20,16 @@
   /* align-items: stretch; */
   gap: 2rem;
   padding: 0rem 3rem;
-  /* height: 100vh; */
+  height: 95vh;
   /* border: 1px solid pink; */
   background-color: #f0f0f0;
-  height: 75vh;
+  // height: 75vh;
 
   .left {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr;
-    gap: 1rem;
+    gap: 0.8rem;
     overflow-y: auto;
 
     .exam-timer {

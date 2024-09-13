@@ -2,11 +2,12 @@
 // import HeroSection from "@/components/dashboard/hero-section/heroSection";
 // import Image from "next/image";
 
+import Link from "next/link";
+
 export default function Home() {
   return (
     <section>
-      {/* <HeroSection />
-      <ExamsSection /> */}
+      <Link href="/dashboard">Go to DashBoard</Link>
     </section>
   );
 }
