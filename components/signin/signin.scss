@@ -6,7 +6,7 @@
     flex: 1;
     // display: grid;
     // grid-template-columns: 1fr 1fr;
-    border: 1px red solid;
+    // border: 1px red solid;
     height: 100%;
     display: flex;
     align-items: center;
@@ -124,7 +124,12 @@
             }
           }
 
-          p {
+          p.wrong-cred {
+            color: rgb(222, 70, 70);
+          }
+
+          .forgot-pass-link {
+            font-size: 1.4rem;
             align-self: center;
             color: #000;
             font-weight: 500;

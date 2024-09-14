@@ -1,17 +1,25 @@
 import React from "react";
 
 interface InputFieldProps {
+  name: string;
   placeholder: string;
   type?: string;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
+  name,
   placeholder,
   type = "text",
 }) => {
   return (
     <div className="input-field">
-      <input type={type} className="input-box" placeholder={placeholder} />
+      <input
+        type={type}
+        name={name}
+        className="input-box"
+        placeholder={placeholder}
+        required
+      />
       <label htmlFor="" className="input-label">
         <svg
           xmlns="http://www.w3.org/2000/svg"

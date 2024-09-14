@@ -36,7 +36,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   /* margin: 4rem; */
   /* border: 1px solid red; */
   padding: 0.8rem 0;
@@ -77,11 +77,13 @@
   /* border: 1px solid red; */
 }
 
-.header .signin-part .link {
+.header .signin-part .link,
+.logout-btn {
   font-size: 1.6rem;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: 1;
   /* font-family: 'Poppins', sans-serif   */
   /* border: 1px solid #04151F; */
@@ -112,4 +114,54 @@
   color: black;
 
   /* color: white; */
+}
+
+.header .user-card {
+  display: flex;
+  flex: 1;
+  /* box-shadow:
+    inset 3px 3px 8px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.8); */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 5px;
+
+  .user-avatar {
+  }
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 1rem;
+
+    .user-name {
+      font-size: 1.6rem;
+      font-weight: 200;
+    }
+
+    .user-email {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  form {
+    flex: 1;
+    /* border: 1px solid red; */
+    display: flex;
+    padding: 0.6rem 0;
+  }
+  .logout-btn {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: rgb(0, 0, 0);
+    transition: all 0.2s;
+  }
+
+  .logout-btn:hover {
+    background-color: black;
+    color: var(--primary-color);
+  }
 }

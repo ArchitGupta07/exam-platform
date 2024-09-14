@@ -5,15 +5,23 @@ import "@/components/navbar/navbar.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { getSession, logout } from "@/utils/actions";
+import { SessionData } from "@/utils/lib";
 
-const Navbar = () => {
+type NavbarProps = {
+  session: SessionData;
+};
+
+const Navbar: React.FC<NavbarProps> = ({ session }) => {
   const path = usePathname();
-  console.log(path);
+  // console.log(path);
+
   return (
     <header className="container header">
       <div className="logo-part">
         <Image src="/logo.png" width={40} height={40} alt="logo" />
         <h2>GiveExams</h2>
+        {session.username}
       </div>
       <nav>
         <ul>
@@ -65,14 +73,35 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <div className="signin-part">
-        <Link className="signin-link link" href="/signin">
-          Sign In
-        </Link>
-        <Link className="signup-link link" href="../signup">
-          Sign Up
-        </Link>
-      </div>
+
+      {!session.isLoggedIn ? (
+        <div className="signin-part">
+          <Link className="signin-link link" href="/signin">
+            Sign In
+          </Link>
+          <Link className="signup-link link" href="../signup">
+            Sign Up
+          </Link>
+        </div>
+      ) : (
+        <div className="user-card">
+          <Image
+            src="/avatar.png"
+            alt="profile photo"
+            width={40}
+            height={40}
+            className="user-avatar"
+          />
+          <div className="user-info">
+            <h1 className="user-name">Archit Gupta</h1>
+
+            <p className="user-email">ag213@snu.edi.in</p>
+          </div>
+          <form action={logout}>
+            <button className="logout-btn">Log Out</button>
+          </form>
+        </div>
+      )}
     </header>
   );
 };
