@@ -1,36 +1,80 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./examWindow.scss";
-import { questions } from "@/data/quesData";
+import { mockQuestions } from "@/data/quesData";
 import Image from "next/image";
 import Timer from "@/components/exams/timer/timer.jsx";
+import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
 interface Answers {
   [key: number]: string;
 }
 
+interface Question {
+  id: number;
+  content: string;
+  options: string[];
+  questionType: string;
+}
+
 const ExamWindow = () => {
-  const [selectedQuestion, setSelectedQuestion] = useState(questions[0]);
+  const [selectedQuestion, setSelectedQuestion] = useState<Question>();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [currentSection, setCurrentSection] = useState("Physics");
 
   const [markedQues, setMarkedQues] = useState<number[]>([]);
 
-  const currentQuestion = questions[currentQuestionIndex];
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const examId = searchParams.get("examId");
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        const response = await fetch(`/api/exams?examId=${examId}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch questions");
+        }
+        const data = await response.json();
+        setQuestions(data);
+        const currentQuestion = questions[currentQuestionIndex];
+        setSelectedQuestion(questions[0]);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unexpected error occurred");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchQuestions();
+  }, [examId]);
 
   const handleOptionSelect = (option: string) => {
     console.log("handleOptionSelect");
-    setAnswers({
-      ...answers,
-      [selectedQuestion.id]: option,
-    });
+
+    if (selectedQuestion) {
+      setAnswers({
+        ...answers,
+        [selectedQuestion.id]: option,
+      });
+    }
   };
 
   const handleSaveAndNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      if (!Object.keys(answers).includes(String(selectedQuestion.id))) {
+      if (
+        selectedQuestion &&
+        !Object.keys(answers).includes(String(selectedQuestion?.id))
+      ) {
         setAnswers({
           ...answers,
           [selectedQuestion.id]: "None",
@@ -41,7 +85,7 @@ const ExamWindow = () => {
     }
   };
   const handleMarkQuestion = () => {
-    if (!markedQues.includes(selectedQuestion.id)) {
+    if (selectedQuestion && !markedQues.includes(selectedQuestion.id)) {
       setMarkedQues([...markedQues, selectedQuestion.id]);
     }
   };
@@ -105,6 +149,7 @@ const ExamWindow = () => {
                     setCurrentQuestionIndex(indx);
                     setSelectedQuestion(question);
                     if (
+                      selectedQuestion &&
                       !Object.keys(answers).includes(
                         String(selectedQuestion.id)
                       )
@@ -146,15 +191,15 @@ const ExamWindow = () => {
             <h2 className="question-num">
               Question {currentQuestionIndex + 1}
             </h2>
-            <p className="question">{selectedQuestion.text}</p>
+            <p className="question">{selectedQuestion?.content}</p>
             <form>
               <ul>
-                {selectedQuestion.options.map((option, index) => (
+                {selectedQuestion?.options.map((option, index) => (
                   <li key={index}>
                     <label className="square-checkbox">
                       <input
                         type="checkbox"
-                        name={`question-${selectedQuestion.id}`}
+                        name={`question-${selectedQuestion?.id}`}
                         value={option}
                         checked={
                           answers[selectedQuestion.id]?.includes(option) ||

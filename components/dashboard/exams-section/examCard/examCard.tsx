@@ -26,7 +26,7 @@ const ExamCard: React.FC<ExamCardProps> = ({ exam }) => {
             <li>Do not refresh the page during the exam.</li>
             <li>Click &quot;Submit&quot; once you finish the exam.</li>
           </ol>
-          <Link href="/dashboard/exams/exam_id" className="start-button">
+          <Link href="/dashboard/exams/1" className="start-button">
             Start Exam
           </Link>
         </div>
