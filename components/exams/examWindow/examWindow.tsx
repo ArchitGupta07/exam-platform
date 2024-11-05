@@ -5,8 +5,9 @@ import "./examWindow.scss";
 import { mockQuestions } from "@/data/quesData";
 import Image from "next/image";
 import Timer from "@/components/exams/timer/timer.jsx";
-import { useRouter } from "next/router";
-import { useSearchParams } from "next/navigation";
+// import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
+import Question from "../question/question";
 
 interface Answers {
   [key: number]: string;
@@ -43,7 +44,10 @@ const ExamWindow = () => {
         const data = await response.json();
         setQuestions(data);
         const currentQuestion = questions[currentQuestionIndex];
-        setSelectedQuestion(questions[0]);
+        // setSelectedQuestion(questions[0]);
+        if (data.length > 0) {
+          setSelectedQuestion(data[0]);
+        }
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -97,10 +101,59 @@ const ExamWindow = () => {
     }
   };
 
+  const router = useRouter();
+  const handleSubmitButton = async () => {
+    // Step 1: Confirm submission
+    const confirmSubmit = window.confirm(
+      "Are you sure you want to submit the exam?"
+    );
+    if (!confirmSubmit) return;
+
+    // Step 2: Check for unanswered questions and set "None" if necessary
+    const completedAnswers = { ...answers };
+    questions.forEach((question) => {
+      if (!Object.keys(completedAnswers).includes(String(question.id))) {
+        completedAnswers[question.id] = "None";
+      }
+    });
+
+    setAnswers(completedAnswers);
+
+    // Step 3: Send answers to server
+    try {
+      //   const response = await fetch(`/api/submit-exam`, {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       examId,
+      //       answers: completedAnswers,
+      //     }),
+      //   });
+
+      //   if (!response.ok) {
+      //     throw new Error("Failed to submit exam. Please try again.");
+      //   }
+
+      // Step 4: Redirect or show success message
+      alert("Exam submitted successfully!");
+      router.push(`/dashboard`);
+    } catch (error) {
+      console.error("Error submitting exam:", error);
+      alert("An error occurred while submitting. Please try again.");
+    }
+  };
+
   return (
     <section className="exam-window">
       <div className="container">
         <div className="left">
+          <div className="exam-timer">
+            <button className="exam-submit-btn" onClick={handleSubmitButton}>
+              Submit
+            </button>
+          </div>
           <div className="exam-timer">
             <Timer initialSeconds={36000} />
           </div>
@@ -191,7 +244,10 @@ const ExamWindow = () => {
             <h2 className="question-num">
               Question {currentQuestionIndex + 1}
             </h2>
-            <p className="question">{selectedQuestion?.content}</p>
+            {/* <p className="question">{selectedQuestion?.content}</p> */}
+            <div className="question">
+              <Question questionText={selectedQuestion?.content || ""} />
+            </div>
             <form>
               <ul>
                 {selectedQuestion?.options.map((option, index) => (

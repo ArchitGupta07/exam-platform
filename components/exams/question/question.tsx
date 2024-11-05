@@ -27,7 +27,7 @@ const parseQuestion = (question: string) => {
 
 // Question component definition with type-checking
 const Question: React.FC<QuestionProps> = ({ questionText }) => {
-  return <div>{parseQuestion(questionText)}</div>;
+  return <p>{parseQuestion(questionText)}</p>;
 };
 
 export default Question;

@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ session }) => {
       <div className="logo-part">
         <Image src="/logo.png" width={40} height={40} alt="logo" />
         <h2>GiveExams</h2>
-        {session.username}
+        {session.userName}
       </div>
       <nav>
         <ul>

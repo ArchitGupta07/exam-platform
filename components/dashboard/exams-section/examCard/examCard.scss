@@ -1,9 +1,10 @@
 .exam-card {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   /* border: 1px solid red; */
-  padding: 3rem;
+  padding: 2rem;
   gap: 2rem;
   /* background-color: var(--primary-color); */
   background-color: #fff;
