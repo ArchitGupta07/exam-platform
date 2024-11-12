@@ -19,11 +19,11 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
     const fetchSession = async () => {
       const sessionData = await getSession();
       const plainSession = {
-        userId: session?.userId || "", // default to empty string
-        userName: session?.userName || "", // default to empty string
-        isPro: session?.isPro || false, // default to false
-        isBlocked: session?.isBlocked || false, // default to false
-        isLoggedIn: session?.isLoggedIn || false, // default to false
+        userId: session?.userId || "",
+        userName: session?.userName || "",
+        isPro: session?.isPro || false,
+        isBlocked: session?.isBlocked || false,
+        isLoggedIn: session?.isLoggedIn || false,
       };
       setSession(plainSession);
     };

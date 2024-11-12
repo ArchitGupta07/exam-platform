@@ -1,0 +1,49 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.4rem;
+  box-shadow: 0 0 5px gray;
+  border-radius: 1rem;
+  // height: 100%;
+  //   align-items: center;
+  // border: 1px solid red;
+
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 1rem;
+    gap: 1rem;
+    // border: 1px solid red;
+
+    .profile-img {
+      border-radius: 1rem;
+    }
+    .profile-info {
+      align-self: flex-start;
+      //   border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .profile-username {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .edit-profile-btn {
+    font-size: 1.6rem;
+    font-weight: 600;
+    // flex: 1;
+    // border: 1px solid brown;
+    color: white;
+    padding: 0.8rem 0;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px gray;
+  }
+}

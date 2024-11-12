@@ -1,0 +1,41 @@
+// .log-table {
+//   //   border: 1px solid teal;
+
+// }
+
+.log-table {
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px gray;
+  padding: 20px;
+  // font-family: Arial, sans-serif;
+
+  .headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .submission-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  }
+}

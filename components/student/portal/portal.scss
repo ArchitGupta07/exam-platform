@@ -1,0 +1,25 @@
+.student-portal-section {
+  //   border: 1px solid red;
+
+  .container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+
+    .left-side {
+      flex: 1;
+      // border: 1px solid blue;
+    }
+    .right-side {
+      flex: 4;
+      // border: 1px solid black;
+      display: grid;
+      grid-template-columns: 1fr;
+
+      gap: 1rem;
+    }
+  }
+}

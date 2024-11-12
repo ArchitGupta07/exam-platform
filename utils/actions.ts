@@ -40,7 +40,7 @@ export const login = async (
   }
 
   session.userId = "1";
-  session.username = username;
+  session.userName = username;
   session.isPro = isPro;
   session.isLoggedIn = true;
 
